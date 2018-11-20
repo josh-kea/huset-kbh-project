@@ -1,0 +1,122 @@
+@media screen and (min-width: 800px) {
+  body {
+    width: 100vw;
+    margin: auto;
+  }
+}
+
+body {
+  font-family: "Archivo", sans-serif;
+}
+
+/* THE EVENTSLIST IS A SINGLE-COLUMN GRID */
+#eventslist {
+  display: grid;
+}
+
+button {
+  border: 4px solid tomato;
+  color: tomato;
+  font-weight: 700;
+  font-size: 1.2em;
+  background-color: transparent;
+  border-radius: 25px;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: tomato;
+  color: white;
+}
+
+/* EACH BLOCK IS A GRID */
+
+.event-article {
+  display: grid;
+  grid-template-columns: 40vw 1fr 1fr;
+  grid-column-gap: 17px;
+  margin-right: 5px;
+  grid-template-rows: minmax(100px, 100px) 0.1fr 100px;
+  grid-template-areas:
+    "img name name"
+    "img category category"
+    "img venue date"
+    "img admission admission"
+    "img see-info buy-ticket";
+}
+
+.img-div {
+  grid-area: img;
+  height: 100%;
+}
+
+.event-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-name {
+  grid-area: name;
+  overflow: hidden;
+  align-self: center;
+  justify-self: start;
+  display: flex;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+.event-category {
+  grid-area: category;
+  align-self: center;
+  justify-self: left;
+  color: tomato;
+  display: flex;
+}
+h3 {
+  font-size: 2.4em;
+}
+
+.event-venue {
+  grid-area: venue;
+  align-self: center;
+  justify-self: left;
+  display: flex;
+  font-size: 30px;
+  overflow: hidden;
+}
+
+.event-date {
+  grid-area: date;
+  align-self: center;
+  justify-self: left;
+  display: flex;
+}
+
+.event-date p {
+  font-size: 30px;
+  overflow: hidden;
+  display: flex;
+  align-self: center;
+}
+
+.event-admission-price {
+  grid-area: admission;
+  color: tomato;
+}
+
+.event-buy-ticket {
+  grid-area: buy-ticket;
+}
+.event-buy-ticket-btn {
+  height: 80%;
+}
+
+.event-see-info {
+  grid-area: see-info;
+}
+.event-see-info-btn {
+  height: 80%;
+}
