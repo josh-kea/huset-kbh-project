@@ -7,15 +7,18 @@
 
 body {
   font-family: "Archivo", sans-serif;
+  background-color: #e4e4e4;
+  color: #575757;
 }
 
 /* THE EVENTSLIST IS A SINGLE-COLUMN GRID */
 #eventslist {
   display: grid;
+  grid-row-gap: 4vmin;
 }
 
 button {
-  border: 4px solid tomato;
+  border: 3px solid tomato;
   color: tomato;
   font-weight: 700;
   font-size: 1.2em;
@@ -33,7 +36,8 @@ button:hover {
 
 .event-article {
   display: grid;
-  grid-template-columns: 40vmin 1fr 1fr;
+  background-color: white;
+  grid-template-columns: 44vmin 1fr 1fr;
   grid-template-rows: 12vmin 5vmin 5vmin 5vmin;
   grid-row-gap: 2vmin;
   grid-column-gap: 2vmin;
@@ -41,13 +45,17 @@ button:hover {
   justify-items: start;
   padding-bottom: 2vmin;
   padding-top: 2vmin;
-  border-bottom: 0.5vmin solid tomato;
-
+  /* border-bottom: 0.5vmin solid tomato; */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   grid-template-areas:
     "img name name"
     "img category category"
     "img venue date"
     "admission see-info buy-ticket";
+}
+.event-article:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .img-div {
@@ -61,7 +69,7 @@ button:hover {
 .event-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .event-name {
@@ -101,13 +109,15 @@ h3 {
   color: tomato;
   font-size: 3vw;
   justify-self: center;
+
+  padding-right: 10px;
 }
 
 .event-buy-ticket {
   grid-area: buy-ticket;
   font-size: 2vw;
   padding-right: 0.2vmin;
-  width: 100%;
+  width: 95%;
 }
 .event-buy-ticket-btn {
   height: 80%;
@@ -117,7 +127,7 @@ h3 {
 .event-see-info {
   grid-area: see-info;
   font-size: 2vw;
-  width: 100%;
+  width: 95%;
 }
 .event-see-info-btn {
   height: 80%;
