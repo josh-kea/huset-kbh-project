@@ -39,8 +39,8 @@ button:hover {
   grid-column-gap: 2vmin;
   align-items: center;
   justify-items: start;
-  padding-bottom: 3vmin;
-  padding-top: 3vmin;
+  padding-bottom: 2vmin;
+  padding-top: 2vmin;
   border-bottom: 0.5vmin solid tomato;
 
   grid-template-areas:
@@ -53,6 +53,7 @@ button:hover {
 .img-div {
   grid-area: img;
   height: 100%;
+  width: 100%;
   justify-self: center;
   align-self: center;
 }
@@ -60,7 +61,7 @@ button:hover {
 .event-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .event-name {
@@ -106,15 +107,19 @@ h3 {
   grid-area: buy-ticket;
   font-size: 2vw;
   padding-right: 0.2vmin;
+  width: 100%;
 }
 .event-buy-ticket-btn {
   height: 80%;
+  width: inherit;
 }
 
 .event-see-info {
   grid-area: see-info;
   font-size: 2vw;
+  width: 100%;
 }
 .event-see-info-btn {
   height: 80%;
+  width: inherit;
 }
