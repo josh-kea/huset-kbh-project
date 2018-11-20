@@ -33,10 +33,15 @@ button:hover {
 
 .event-article {
   display: grid;
-  grid-template-columns: 40vw 1fr 1fr;
-  grid-column-gap: 17px;
-  margin-right: 5px;
-  grid-template-rows: minmax(100px, 100px) 0.1fr 100px;
+  grid-template-columns: 40vmin 1fr 1fr;
+
+  grid-template-rows: 12vmin 5vmin 5vmin 5vmin 5vmin;
+  grid-row-gap: 1vmin;
+  grid-column-gap: 1vmin;
+  align-items: center;
+  justify-items: start;
+  padding-bottom: 3vmin;
+  padding-top: 3vmin;
   grid-template-areas:
     "img name name"
     "img category category"
@@ -59,56 +64,41 @@ button:hover {
 .event-name {
   grid-area: name;
   overflow: hidden;
-  align-self: center;
-  justify-self: start;
-  display: flex;
+  font-size: 4vw;
 }
 
 h2 {
-  font-size: 3em;
 }
 
 .event-category {
   grid-area: category;
-  align-self: center;
-  justify-self: left;
   color: tomato;
-  display: flex;
+  font-size: 3.5vw;
 }
 h3 {
-  font-size: 2.4em;
 }
 
 .event-venue {
   grid-area: venue;
-  align-self: center;
-  justify-self: left;
-  display: flex;
-  font-size: 30px;
   overflow: hidden;
+  font-size: 3vw;
 }
 
 .event-date {
   grid-area: date;
-  align-self: center;
-  justify-self: left;
-  display: flex;
-}
-
-.event-date p {
-  font-size: 30px;
-  overflow: hidden;
-  display: flex;
-  align-self: center;
+  font-size: 3vw;
 }
 
 .event-admission-price {
   grid-area: admission;
   color: tomato;
+  font-size: 3vw;
 }
 
 .event-buy-ticket {
   grid-area: buy-ticket;
+  display: flex;
+  font-size: 2vw;
 }
 .event-buy-ticket-btn {
   height: 80%;
@@ -116,6 +106,7 @@ h3 {
 
 .event-see-info {
   grid-area: see-info;
+  font-size: 2vw;
 }
 .event-see-info-btn {
   height: 80%;
