@@ -18,7 +18,8 @@ body {
 }
 
 button,
-#categories-nav a {
+#categories-nav a,
+.event-count-div p {
   border: 3px solid tomato;
   color: tomato;
   font-weight: 700;
@@ -28,22 +29,33 @@ button,
   transition: all 0.5s;
 }
 
-#categories-nav a {
+#categories-nav a,
+.event-count-div p {
   text-decoration: none;
   padding: 2vmin;
+}
+
+.event-count-div {
+  text-align: center;
+  width: 50px;
+  padding-right: 20px;
+}
+
+.event-count-div p {
+  background-color: tomato;
+  border-radius: 100%;
+}
+
+.event-count-div p {
+  color: white;
 }
 
 .categories-div {
   padding-top: 1vh;
   padding-bottom: 2vh;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-items: center;
-}
-
-.categories-div p {
-  justify-self: end;
 }
 
 button:hover,
