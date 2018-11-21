@@ -53,11 +53,14 @@ function showAll(data) {
     clone.querySelector(".time-span").textContent = eventTime;
     clone.querySelector(".admission-span").textContent = admissionType;
 
-    // Checking to see if there is a ticket price or door price
+    // Checking to see if there is a ticket price or door price, setting price accordingly.
     if (ticketPrice) {
       clone.querySelector(".price-span").textContent = ticketPrice;
     } else if (doorPrice) {
       clone.querySelector(".price-span").textContent = doorPrice;
+    } else if (ticketPrice && doorPrice) {
+      clone.querySelector(".price-span").textContent =
+        ticketPrice + " + " + doorPrice + " at Door";
     }
 
     clone.querySelector(".event-buy-ticket-btn").href = ticketLink;
@@ -66,6 +69,8 @@ function showAll(data) {
 
     if (admissionType === "FREE") {
       clone.querySelector(".end").remove();
+      clone.querySelector(".event-buy-ticket-btn").remove();
+    } else if (admissionType === "PAY AT DOOR") {
       clone.querySelector(".event-buy-ticket-btn").remove();
     }
 
