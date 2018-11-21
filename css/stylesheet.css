@@ -38,8 +38,8 @@ button:hover {
   display: grid;
   background-color: white;
   grid-template-columns: 44vmin 1fr 1fr;
-  grid-template-rows: 12vmin 5vmin 5vmin 5vmin;
-  grid-row-gap: 2vmin;
+  grid-template-rows: 8vmin 3vmin 3vmin 5vmin;
+  grid-row-gap: 1.5vmin;
   grid-column-gap: 2vmin;
   align-items: center;
   justify-items: start;
@@ -75,7 +75,7 @@ button:hover {
 .event-name {
   grid-area: name;
   overflow: hidden;
-  font-size: 4vw;
+  font-size: 3vw;
   margin-left: 1vmin;
 }
 
@@ -87,6 +87,8 @@ h2 {
   color: tomato;
   font-size: 3.5vw;
   margin-left: 1vmin;
+  justify-self: start;
+  padding-bottom: 10px;
 }
 h3 {
 }
