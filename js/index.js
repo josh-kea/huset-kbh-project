@@ -13,6 +13,10 @@ function loadAll() {
     .then(showAll);
 }
 
+// Counting the events on the current page
+var eventsCount = 0;
+const eventsCounter = document.querySelector("#eventCount");
+
 // Creating a function to show all data (appending the template clones to the main tag) //
 function showAll(data) {
   console.log(data);
@@ -39,10 +43,7 @@ function showAll(data) {
       clone.querySelector(".event-category-h3").textContent = "Storytelling";
     }
 
-    console.log(eventVenue);
-
     clone.querySelector(".event-name-h2").textContent = eventName;
-
     clone.querySelector(".event-venue-p").textContent = eventVenue;
     clone.querySelector(".date-span").textContent = eventDate;
     clone.querySelector(".time-span").textContent = eventTime;
@@ -68,7 +69,13 @@ function showAll(data) {
     }
     // appending the clone to the main tag
     document.querySelector("main").appendChild(clone);
+    eventsCount++;
+    console.log(eventsCount);
+    eventsCounter.textContent = eventsCount;
   });
+}
+
+if (eventsCount === 1) {
 }
 
 // Category navigation appending from below
