@@ -17,7 +17,8 @@ body {
   grid-row-gap: 4vmin;
 }
 
-button {
+button,
+#categories-nav a {
   border: 3px solid tomato;
   color: tomato;
   font-weight: 700;
@@ -27,7 +28,19 @@ button {
   transition: all 0.5s;
 }
 
-button:hover {
+#categories-nav a {
+  text-decoration: none;
+  padding: 2vmin;
+}
+
+.categories-div {
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+  width: 100%;
+}
+
+button:hover,
+#categories-nav a:hover {
   background-color: tomato;
   color: white;
 }
@@ -38,7 +51,7 @@ button:hover {
   display: grid;
   background-color: white;
   grid-template-columns: 44vmin 1fr 1fr;
-  grid-template-rows: 8vmin 3vmin 3vmin 5vmin;
+  grid-template-rows: 8vmin 5vmin 5vmin 5vmin;
   grid-row-gap: 1.5vmin;
   grid-column-gap: 2vmin;
   align-items: center;

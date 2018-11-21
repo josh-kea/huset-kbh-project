@@ -71,8 +71,49 @@ function showAll(data) {
   });
 }
 
-// Fetching categories from the JSON file, and then creating the category menu and appending it to the nav on the HTML
+// Category navigation appending from below
+// Selecting the nav and storing it as a variable
+const catNav = document.querySelector("#categories-nav");
 
-loadAll();
+function loadSubCategories() {
+  fetch(baseLink + "categories?parent=15")
+    .then(e => e.json())
+    .then(makeCatMenu);
+}
+
+function makeCatMenu(cats) {
+  cats.forEach(cat => {
+    console.log(cat);
+    if (cat.id === 16) {
+      const newA = document.createElement("a");
+      newA.textContent = cat.name;
+      newA.href = "?catid=" + cat.id;
+      catNav.appendChild(newA);
+    } else if (cat.id === 21) {
+      const newA = document.createElement("a");
+      newA.textContent = cat.name;
+      newA.href = "?catid=" + cat.id;
+      catNav.appendChild(newA);
+    }
+  });
+}
+
+const catID = params.get("catid");
+
+if (catID) {
+  loadEventsByCat(catID);
+} else {
+  loadAll();
+}
+
+function loadEventsByCat(catID) {
+  fetch(baseLink + "events?categories=" + catID + "&_embed")
+    .then(e => e.json())
+    .then(showAll);
+}
+
+loadSubCategories();
+
+// Fetching categories from the JSON file, and then creating the category menu and appending it to the nav on the HTML
 
 //loading all functions
