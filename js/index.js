@@ -17,10 +17,13 @@ function loadAll() {
 var eventsCount = 0;
 const eventsCounter = document.querySelector("#eventCount");
 
+//Defining current page which will hold catID from URLSearchParams
+var currentPage = 0;
+
 // Creating a function to show all data (appending the template clones to the main tag) //
 function showAll(data) {
   console.log(data);
-
+  // Styling the a's based on the catid in the url bar
   //For Each list item it will change the tags content according to the the list item's field values. //
   data.forEach(event => {
     // Cloning the template and storing it into a constant variable called clone (to be appended later to main)
@@ -35,7 +38,7 @@ function showAll(data) {
     const ticketLink = event.acf.ticket_link;
 
     /* Picking 2nd item in array from categories (because each post has 2x categories) */
-    const eventCats = event.categories[1];
+    const eventCats = event.categories[2];
 
     if (eventCats === 16) {
       clone.querySelector(".event-category-h3").textContent = "Stand Up";
@@ -50,6 +53,8 @@ function showAll(data) {
     clone.querySelector(".admission-span").textContent = admissionType;
     clone.querySelector(".price-span").textContent = ticketPrice;
     clone.querySelector(".event-buy-ticket-btn").href = ticketLink;
+    clone.querySelector(".event-see-info-btn").href =
+      "details.html?groceryid=" + event.id;
 
     if (admissionType === "FREE") {
       clone.querySelector(".end").remove();
@@ -75,18 +80,9 @@ function showAll(data) {
   });
 }
 
-if (eventsCount === 1) {
-}
-
 // Category navigation appending from below
 // Selecting the nav and storing it as a variable
 const catNav = document.querySelector("#categories-nav");
-
-function loadSubCategories() {
-  fetch(baseLink + "categories?parent=15")
-    .then(e => e.json())
-    .then(makeCatMenu);
-}
 
 function makeCatMenu(cats) {
   cats.forEach(cat => {
@@ -95,17 +91,32 @@ function makeCatMenu(cats) {
       const newA = document.createElement("a");
       newA.textContent = cat.name;
       newA.href = "?catid=" + cat.id;
+      newA.setAttribute("id", cat.id + "-a");
       catNav.appendChild(newA);
     } else if (cat.id === 21) {
       const newA = document.createElement("a");
       newA.textContent = cat.name;
       newA.href = "?catid=" + cat.id;
+      newA.setAttribute("id", cat.id + "-a");
+      catNav.appendChild(newA);
+    } else if (cat.id === 29) {
+      const newA = document.createElement("a");
+      newA.textContent = cat.name;
+      newA.href = "?catid=" + cat.id;
+      newA.setAttribute("id", cat.id + "-a");
+      catNav.appendChild(newA);
+    } else if (cat.id === 28) {
+      const newA = document.createElement("a");
+      newA.textContent = cat.name;
+      newA.href = "?catid=" + cat.id;
+      newA.setAttribute("id", cat.id + "-a");
       catNav.appendChild(newA);
     }
   });
 }
 
 const catID = params.get("catid");
+currentPage = catID;
 
 if (catID) {
   loadEventsByCat(catID);
@@ -117,6 +128,12 @@ function loadEventsByCat(catID) {
   fetch(baseLink + "events?categories=" + catID + "&_embed")
     .then(e => e.json())
     .then(showAll);
+}
+
+function loadSubCategories() {
+  fetch(baseLink + "categories?parent=15")
+    .then(e => e.json())
+    .then(makeCatMenu);
 }
 
 loadSubCategories();

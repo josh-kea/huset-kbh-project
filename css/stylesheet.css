@@ -17,7 +17,8 @@ body {
   grid-row-gap: 4vmin;
 }
 
-button,
+.event-see-info-btn,
+.event-buy-ticket-btn,
 #categories-nav a,
 .event-count-div p {
   border: 3px solid tomato;
@@ -29,10 +30,12 @@ button,
   transition: all 0.5s;
 }
 
+.event-see-info-btn,
+.event-buy-ticket-btn,
 #categories-nav a,
 .event-count-div p {
   text-decoration: none;
-  padding: 2vmin;
+  padding: 1vmin;
 }
 
 .event-count-div {
@@ -58,7 +61,8 @@ button,
   justify-items: center;
 }
 
-button:hover,
+.event-see-info-btn:hover,
+.event-buy-ticket-btn:hover,
 #categories-nav a:hover {
   background-color: tomato;
   color: white;
