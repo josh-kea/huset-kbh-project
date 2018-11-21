@@ -54,7 +54,7 @@ function showAll(data) {
     clone.querySelector(".price-span").textContent = ticketPrice;
     clone.querySelector(".event-buy-ticket-btn").href = ticketLink;
     clone.querySelector(".event-see-info-btn").href =
-      "details.html?groceryid=" + event.id;
+      "eventDetails.html?eventid=" + event.id;
 
     if (admissionType === "FREE") {
       clone.querySelector(".end").remove();
