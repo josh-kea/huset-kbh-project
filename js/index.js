@@ -34,6 +34,7 @@ function showAll(data) {
     const eventTime = event.acf.time;
     const admissionType = event.acf.payment_type;
     const ticketPrice = event.acf.ticket_price;
+    const doorPrice = event.acf.door_price;
 
     const ticketLink = event.acf.ticket_link;
 
@@ -51,7 +52,14 @@ function showAll(data) {
     clone.querySelector(".date-span").textContent = eventDate;
     clone.querySelector(".time-span").textContent = eventTime;
     clone.querySelector(".admission-span").textContent = admissionType;
-    clone.querySelector(".price-span").textContent = ticketPrice;
+
+    // Checking to see if there is a ticket price or door price
+    if (ticketPrice) {
+      clone.querySelector(".price-span").textContent = ticketPrice;
+    } else if (doorPrice) {
+      clone.querySelector(".price-span").textContent = doorPrice;
+    }
+
     clone.querySelector(".event-buy-ticket-btn").href = ticketLink;
     clone.querySelector(".event-see-info-btn").href =
       "eventDetails.html?eventid=" + event.id;
