@@ -83,7 +83,7 @@ body {
   display: grid;
   background-color: white;
   grid-template-columns: 44vmin 1fr 1fr;
-  grid-template-rows: 8vmin 5vmin 5vmin 5vmin;
+  grid-template-rows: 8vmin 5vmin 5vmin 8vmin;
   grid-row-gap: 1.5vmin;
   grid-column-gap: 2vmin;
   align-items: center;
@@ -99,6 +99,7 @@ body {
     "img venue date"
     "admission see-info buy-ticket";
 }
+
 .event-article:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
@@ -154,15 +155,16 @@ h3 {
 .event-admission-price {
   grid-area: admission;
   color: tomato;
-  font-size: 3vw;
+  font-size: 2.5vw;
   justify-self: center;
-
+  font-weight: 2000;
+  text-align: center;
   padding-right: 10px;
 }
 
 .event-buy-ticket {
   grid-area: buy-ticket;
-  font-size: 2vw;
+
   padding-right: 0.2vmin;
   width: 95%;
 }
@@ -173,7 +175,7 @@ h3 {
 
 .event-see-info {
   grid-area: see-info;
-  font-size: 2vw;
+
   width: 95%;
 }
 .event-see-info-btn {

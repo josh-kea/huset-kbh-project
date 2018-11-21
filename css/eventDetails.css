@@ -1,0 +1,102 @@
+#event-details-div {
+  display: grid;
+  background-color: white;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+  grid-template-rows: 5vmin 8vmin 5vmin 1fr 1fr 1fr auto;
+  grid-row-gap: 1.5vmin;
+  grid-column-gap: 2vmin;
+  align-items: center;
+  justify-items: start;
+  padding-bottom: 2vmin;
+  padding-top: 2vmin;
+  /* border-bottom: 0.5vmin solid tomato; */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  grid-template-areas:
+    "date date ."
+    "name category category"
+    "img img admission"
+    "img img buy-ticket"
+    "img img extra"
+    "desc desc desc ";
+}
+
+.event-description {
+  grid-area: desc;
+}
+
+.categories-div {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-bottom: 2vmin;
+  padding-top: 2vmin;
+}
+
+#categories-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.event-details-img-div {
+  width: 20px;
+  height: 100%;
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+}
+
+.event-details-img-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facebook-button {
+  align-self: center;
+}
+
+i {
+  color: tomato;
+  font-size: 6vmin;
+}
+
+.youtube-button {
+}
+
+.event-admission-price-p {
+  font-size: 3vmin;
+  font-weight: 1000;
+}
+
+.event-buy-ticket {
+  text-align: center;
+}
+
+.extra-buttons {
+  grid-area: extra;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-self: end;
+  align-items: end;
+}
+
+.event-date-p {
+  color: tomato;
+}
+
+.event-date-p span {
+  color: black;
+}
+
+.event-date {
+}
+
+.event-category {
+  grid-area: category;
+  color: tomato;
+  font-size: 3.5vw;
+  margin-left: 1vmin;
+  justify-self: start;
+  padding-bottom: 0;
+}
