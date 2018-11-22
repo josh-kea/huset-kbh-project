@@ -152,7 +152,42 @@ function loadSubCategories() {
 }
 
 loadSubCategories();
+/*
+// JQUERY FOR SLIDESHOW //
+$(document).ready(function() {
+  $(".slideshow-next").on("click", function() {
+    console.log("clicked");
+    var currentImg = $(".active");
+    var nextImg = currentImg.next();
 
-// Fetching categories from the JSON file, and then creating the category menu and appending it to the nav on the HTML
+    if (nextImg.length) {
+      currentImg.removeClass("active").css("z-index", -10);
+      nextImg.addClass("active").css("z-index", 10);
+    }
+  });
 
-//loading all functions
+  $(".slideshow-prev").on("click", function() {
+    console.log("clicked");
+    var currentImg = $(".active");
+    var prevImg = currentImg.prev();
+
+    if (prevImg.length) {
+      currentImg.removeClass("active").css("z-index", -10);
+      prevImg.addClass("active").css("z-index", 10);
+    }
+  });
+});
+
+*/
+//TEST//
+
+$(".slideshow-inner > img:gt(0)").hide();
+
+setInterval(function() {
+  $(".slideshow-inner > img:first")
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo(".slideshow-inner");
+}, 3000);

@@ -4,17 +4,29 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huset KBH</title>
   </head>
   <body>
-    <div class="pages-nav">
-      <nav>
-        <a href="index.html">Events</a>
+    <div class="pages-nav-div">
+      <div class="logo-div"><img src="img/huset_logo_white.png" alt=""></div>
+      <div class="toggle"><label for="toggle"><i class="fas fa-bars"></i></label></div>
+      <input type="checkbox" id="toggle">
+      <nav id="pages-nav">
+        <a href="index.html" class="current">Events</a>
         <a href="contact.html">Contact</a>
         <a href="volunteer.html">Volunteer</a>
       </nav>
     </div>
+
+    <div class="slideshow-container">
+      <div class="slideshow-inner">
+        <img src="img/slide.jpg" class="active">
+        <img src="img/slide2.jpg" alt="">
+      </div>
+    </div>
+
     <div class="categories-div">
       <div class="event-count-div"><p><span id="eventCount">0</span></p></div>
       <nav id="categories-nav"><a href="index.html">Show all</a></nav>
@@ -37,5 +49,12 @@
 
     </main>
   </body>
+    <!-- JQUERY IMPORT SCRIPT -->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
   <script src="js/index.js" charset="utf-8"></script>
+
+
 </html>

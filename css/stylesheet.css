@@ -1,7 +1,7 @@
 @media screen and (min-width: 800px) {
   body {
     width: 100vw;
-    margin: auto;
+    margin: 0;
   }
 }
 
@@ -9,12 +9,16 @@ body {
   font-family: "Archivo", sans-serif;
   background-color: #e4e4e4;
   color: #575757;
+  width: 100vw;
+  margin: 0;
 }
 
 /* THE EVENTSLIST IS A SINGLE-COLUMN GRID */
 #eventslist {
   display: grid;
   grid-row-gap: 4vmin;
+  width: 98vw;
+  margin: auto;
 }
 
 .event-see-info-btn,
@@ -55,6 +59,8 @@ body {
 
 .categories-div {
   display: grid;
+  width: 98vw;
+  margin: auto;
   grid-column-gap: 0.3vmin;
   grid-template-columns: 0.08fr 1fr;
 }
@@ -181,4 +187,115 @@ h3 {
 .event-see-info-btn {
   height: 80%;
   width: inherit;
+}
+
+/* PAGES NAVBAR AND LOGO */
+
+.pages-nav-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 5vmin;
+  align-items: center;
+  background-color: tomato;
+  grid-template-rows: 15vmin;
+  padding-left: 2vmin;
+  padding-right: 2vmin;
+}
+
+#pages-nav {
+  max-height: 0;
+  overflow: hidden;
+}
+
+#pages-nav a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+input:checked ~ #pages-nav {
+  max-height: 50vmin;
+}
+
+input {
+  display: none;
+}
+
+.toggle {
+  justify-self: right;
+}
+
+.toggle i {
+  color: white;
+  padding-right: 2vmin;
+  font-size: 8vmin;
+}
+
+.logo-div {
+  display: flex;
+}
+
+.logo-div img {
+  width: 50vmin;
+  height: 50%;
+  object-fit: cover;
+}
+
+#pages-nav .current {
+  text-decoration: underline;
+}
+
+/* FOR CURRENT BUTTON */
+
+.current-button {
+  background-color: tomato;
+  color: white;
+}
+
+/* SLIDESHOW */
+.slideshow-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60vmin;
+  width: 98vw;
+  margin: auto;
+  margin-top: 1vmin;
+}
+
+.slideshow-container img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.slideshow-container img.active {
+  display: inline-block;
+}
+
+.slideshow-prev {
+  align-self: center;
+  justify-self: center;
+}
+
+.slideshow-next {
+  align-self: center;
+  justify-self: center;
+}
+
+.slideshow-prev,
+.slideshow-next {
+  cursor: pointer;
+  font-size: 10vmin;
+}
+
+.slideshow-inner {
+  position: relative;
+}
+
+.slideshow-inner > img {
+  position: absolute;
 }
