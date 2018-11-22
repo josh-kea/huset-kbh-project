@@ -50,7 +50,8 @@ function showAll(data) {
 
     clone.querySelector(".event-name-h2").textContent = eventName;
     clone.querySelector(".event-venue-p").textContent = eventVenue;
-    clone.querySelector(".date-span").textContent = eventDate;
+    clone.querySelector(".date-span").textContent =
+      eventDate.substring(6, 8) + "/" + eventDate.substring(4, 6);
     clone.querySelector(".time-span").textContent = eventTime;
     clone.querySelector(".admission-span").textContent = admissionType;
 

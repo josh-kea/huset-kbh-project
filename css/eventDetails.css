@@ -1,8 +1,8 @@
 #event-details-div {
   display: grid;
   background-color: white;
-  grid-template-columns: 1fr 0.5fr 0.5fr;
-  grid-template-rows: 5vmin 8vmin 15vmin 15vmin 15vmin auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 5vmin 8vmin 18vmin 18vmin 18vmin auto;
   grid-row-gap: 1.5vmin;
   grid-column-gap: 2vmin;
   align-items: center;
@@ -13,11 +13,12 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   grid-template-areas:
-    "date date ."
-    "name category category"
-    "img img admission"
-    "img img buy-ticket"
-    "img img extra"
+    "date date date"
+    "name name category"
+    "img img img"
+    "img img img"
+    "img img img"
+    "buy-ticket admission extra "
     "desc desc desc ";
 }
 
@@ -76,8 +77,6 @@ i {
   justify-self: center;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-self: end;
-  align-items: end;
 }
 
 .event-date-p {
