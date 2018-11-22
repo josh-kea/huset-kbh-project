@@ -25,6 +25,7 @@ function showAll(data) {
   console.log(data);
   // Styling the a's based on the catid in the url bar
   //For Each list item it will change the tags content according to the the list item's field values. //
+  data.sort((a, b) => a.acf.date - b.acf.date);
   data.forEach(event => {
     // Cloning the template and storing it into a constant variable called clone (to be appended later to main)
     const clone = listTemplate.cloneNode(true);
