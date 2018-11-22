@@ -291,3 +291,28 @@ input {
 .slideshow-inner > img {
   position: absolute;
 }
+
+/* FIND YOUOR EVENTS BELOW TEXT */
+
+.events-below-div {
+  display: block;
+  font-size: 3.5vmin;
+  width: 100%;
+  color: #333333;
+  font-weight: 1500;
+
+  width: 98vw;
+  margin: auto;
+  margin-top: -3vmin;
+  margin-bottom: -5vmin;
+}
+
+.events-below-div span {
+  font-weight: 100;
+}
+
+.event-description {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
