@@ -190,4 +190,4 @@ setInterval(function() {
     .fadeIn(1000)
     .end()
     .appendTo(".slideshow-inner");
-}, 6000);
+}, 1000);

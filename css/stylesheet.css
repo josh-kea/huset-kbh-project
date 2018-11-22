@@ -276,20 +276,12 @@ input {
   display: inline-block;
 }
 
-.slideshow-prev {
-  align-self: center;
-  justify-self: center;
+.slideshow-inner {
+  position: relative;
 }
 
-.slideshow-next {
-  align-self: center;
-  justify-self: center;
-}
-
-.slideshow-prev,
-.slideshow-next {
-  cursor: pointer;
-  font-size: 10vmin;
+.slideshow-inner > img {
+  position: absolute;
 }
 
 .slideshow-inner {
